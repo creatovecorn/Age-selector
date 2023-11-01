@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>es6 Conditions checking with if statement</h1>
+
+    <form onsubmit="ageCheck(event)">
+        Enter Your Age:
+        <input id="ageInput" type="number" required step="0.01">
+        <br>
+        <button>Check</button>
+    </form>
+
+    <h1 id="resultWindow"></h1>
+
+    <script>
+        function ageCheck(event) {
+
+            event.preventDefault();
+            let ageInput = document.querySelector("#ageInput").value;
+            ageInput = Number(ageInput);
+
+            console.log(ageInput);
+
+            let message = "";
+
+            if (ageInput > 45) {
+          message = "Aged";
+      } else if (ageInput <= 45 && ageInput > 20) {
+        message = "Young";
+     } else if (ageInput <= 20) {
+         message = "Teen";
+}
+            document.querySelector("#resultWindow").innerHTML = message
+        }
+    </script>
+</body>
+
+</html>
